@@ -1,4 +1,4 @@
-# meta-analysis
+# Psychedelic fMRI meta-analysis: Code review
 
 Scripts Folder:
 
