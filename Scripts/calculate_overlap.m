@@ -33,6 +33,8 @@
 %   to the winner-takes-all (WTA) paradigm. This is a scalar representing
 %   the single Yeo network that contains the most voxels in the ROI.
 
+% Kenneth Shinozuka 2022
+
 function [signs, overlaps_p, overlaps_w] = calculate_overlap(datatype, filename, atlas)
 
     root_path = '/Users/kshinozuka/Documents/Oxford/Research/Rebirth/Literature/Meta-Analysis/';
