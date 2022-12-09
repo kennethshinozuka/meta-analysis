@@ -40,6 +40,8 @@
 % network_overlaps in the case of networks). Then, we update the scoring 
 % matrix, representing the overall score of each pair of Yeo networks. 
 
+% Kenneth Shinozuka 2022
+
 % NOTE: You must update this to reflect the root path to the data on your
 % device.
 root_path = '/Users/kshinozuka/Documents/Oxford/Research/Rebirth/Literature/Meta-Analysis/';
