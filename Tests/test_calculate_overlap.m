@@ -42,7 +42,7 @@ assert(ow_DMN == 7);
 
 mkdir(fullfile(root_path, 'TestSpheres'))
 outDir = fullfile(root_path, 'TestSpheres');
-addpath /Users/kshinozuka/spm12/toolbox/marsbar
+addpath(fullfile(root_path, 'Toolboxes', 'marsbar'))
 setenv('PATH', [getenv('PATH') ':/usr/local/fsl/bin']);
 cd(outDir)
 
