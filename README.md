@@ -4,12 +4,13 @@ In order to run any of the code in the `Scripts` and `Tests` folders, there are 
 1. You MUST update the `root_path` at the top of each file, which contains the path to the directory where you have saved this repository.
 2. To run `compute_surrogate_study.m` and `null_dist.m`, you MUST download the HCP timeseries from 100 unrelated subjects, run `ts = subject(1:100)` then `save(ts, fullfile(root_path, 'Null', 'DK80_BOLD_HCP_100subs.mat'). You can get the timeseries via this link: http://www.kringelbach.org/ndte/dk80/hcp1003_REST1_LR_dbs80.mat
 
-The `Scripts` folder contains five files:
+The `Scripts` folder contains six files/directories:
 1. `calculate_overlap.m`, a function that calculates the overlaps between Yeo networks and regions of interest. 
 2. `scoring.m`, a function that determines the score of the overall FC between Yeo networks (or Yeo + Tian networks, if subcortical connectivity is included). 
 3. `compute_surrogate_study.m`, a function that is called by `null_dist.m` to help create the null distribution.
 4. `null_dist.m`, a function that generates the null distribution.
 5. `FC_meta_analysis.m`, which calls all four of the above functions. Note that **you cannot run this code** without the FC data from the literature, which we cannot share because it is not available publicly.
+6. `natsortfiles`, a folder of functions for sorting files numerically. This is called by `null_dist.m`.
 
 The `Tests` folder contains three files:
 1. `test_calculate_overlap.m`, which tests `calculate_overlap.m`.
