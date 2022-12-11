@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:23c411c5945750703c79205b97122cd8c60530ff5e2708636249af1be80fd3a1
-size 306
+function D = autocorr(D, varargin)
+% method to report lack of autocorrelation options for SPM99
+% FORMAT D = autocorr(D, varargin)
+% 
+% D             - design object
+% varargin      - any other parameters that may have been passed
+% 
+% $Id$
+  
+warning('There are no SPM99 autocorrelation options');
+return

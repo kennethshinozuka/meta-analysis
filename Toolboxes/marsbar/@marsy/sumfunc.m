@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8d0bd1d9e77af84c3fab8da69d5cdfa9bcf44a199e719c3eaf9db05f88dfb49c
-size 237
+function o = sumfunc(o, sumfunc)
+% method to get or set sumfunc
+%
+% $Id$
+
+if nargin < 2
+  % get
+  st = y_struct(o);
+  if isfield(st, 'sumfunc')
+    o = st.sumfunc;
+  else
+    o = '';
+  end
+else
+  % set
+  o.y_struct.sumfunc = sumfunc;
+end

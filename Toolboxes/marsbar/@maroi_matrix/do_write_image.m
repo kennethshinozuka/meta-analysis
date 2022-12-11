@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4fa477af6d4187855d8c02cf5d7795a62cd58c7a78759fe15874aa760c3eb40a
-size 352
+function v = do_write_image(o, fname)
+% method saves matrix as image and returns spm_vol
+%
+% $Id$
+
+v = mars_vol_utils('def_vol');
+v.fname = fname;
+v.mat = o.mat;
+v.dim = size(o.dat);
+
+if binarize(o)
+  v = mars_vol_utils('set_type', v, 'uint8');
+else
+  v = mars_vol_utils('set_type', v, 'float');
+end
+
+v = spm_create_vol(v);
+v = spm_write_vol(v, o.dat);

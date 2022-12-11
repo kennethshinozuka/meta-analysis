@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:18b9012ce5b62999c0652d6db78b919534c697ecd4789a5269a2ce8d07df1d5e
-size 237
+function marsD = set_images(marsD, VY)
+% method to set image vols to design
+% 
+% $Id% 
+  
+if nargin < 2
+  error('Need image volumes');
+end
+D = des_struct(marsD);
+D.xY.VY = VY;
+D.xY.P = strvcat(VY(:).fname);
+marsD = des_struct(marsD, D);

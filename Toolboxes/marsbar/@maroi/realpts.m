@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1d525a2fad2de2a4c928895e90a1479c1a099a53806bcf6667511745d7ab74a1
-size 278
+function [pts, vals] = realpts(o,sp)
+% realpts method - returns 3xN XYZ matrix in mm
+%
+% $Id$
+
+if nargin < 2
+  error('Need space definition to find voxels');
+end
+[pts vals] = voxpts(o, sp); 
+
+if ~isempty(pts)
+  pts = sp.mat * [pts; ones(1, size(pts,2))];
+  pts = pts(1:3,:);
+end

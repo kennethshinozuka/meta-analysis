@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e3797f9dd1baa2de8dc6687c6bda115782f385d91edfbf3653a24b22adbbbf4
-size 521
+% Run SPM 2-session model for MarsBaR ER sample data
+%
+% You might want to define the path to the example data here, as in
+% subjroot = '/my/path/somewhere';
+subjroot = get_subjroot();
+
+sesses = {'sess1','sess2','sess3'};
+
+spm_v = spm('ver');
+sdirname = [spm_v '_ana'];
+if ~strcmp(spm_v, 'SPM99'), spm_defaults; end
+
+% Make sure SPM modality-specific defaults are set
+spm('defaults', 'fmri');
+
+% Run statistics, contrasts
+model_file = configure_er_model(subjroot, sesses, sdirname);
+estimate_er_model(model_file, [1 0]);

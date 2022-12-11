@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c16033e7a7d10d50523d01a7b4d72ae88ac844e18dded24feb55bab759854edb
-size 142
+function v = getvals(o)
+% returns vals for pointlist object
+%
+% $Id$
+
+if ~isempty(o.vals)
+  v = o.vals;
+else
+  v = ones(1, size(o.XYZ,2));
+end

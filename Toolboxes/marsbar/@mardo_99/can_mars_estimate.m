@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0cbf3fdd4648d92ba398c3836046cba3fe04c4821f32df5f0a04b95d6b5347d5
-size 140
+function tf = can_mars_estimate(D)
+% method returns 1 if design can be estimated in MarsBaR
+% 
+% $Id$
+
+tf = ~is_fmri(D) | has_filter(D);
+
+  

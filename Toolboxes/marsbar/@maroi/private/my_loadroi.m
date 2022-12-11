@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b5781ce36a45eb41b8b3fa87348e21095895eaea37caa018b2c48c12a0fe62e8
-size 541
+function o = my_loadroi(fname)
+% my_loadroi function - loads ROI from file, sets source field
+%
+% $Id$
+
+if isa(fname, 'maroi')  % already loaded
+  o = fname;
+  return
+end
+
+o = [];
+if iscell(fname), fname = char(fname); end
+if size(fname, 1) > 1, error('Can only load one ROI at a time'); end
+if isempty(fname), warning('Empty filename'), return, end
+fname = deblank(fname);
+F = load(fname);
+if isfield(F, 'roi') & isa(F.roi, 'maroi')
+  o = F.roi;
+  o = source(o, fname);
+else
+  warning(['Loading file ' fname ' did not return an ROI'])'
+end

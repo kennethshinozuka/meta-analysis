@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ab4839741927a787c53532367074d05c8616da003b2900e56bd5245cdc20b536
-size 160
+function d = bf_dt(D)
+% method returns length of time bin for basis functions
+% 
+% $Id$
+
+SPM = des_struct(D);
+d   = mars_struct('getifthere', SPM, 'xX', 'dt');

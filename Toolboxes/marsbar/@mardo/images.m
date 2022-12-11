@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ad12b3a995555184399cf89a0a89bc3f6515f6f0061d28b7685b1e85464f16c
-size 143
+function r = images(o, imgs)
+% method to get or set images 
+% 
+% $Id$
+  
+if nargin < 2
+  r = get_images(o);
+else
+  r = set_images(o, imgs);
+end

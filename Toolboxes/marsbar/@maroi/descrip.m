@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:300f3c7396f5d837db5ae789e43cfd8e5cfb15bd8503d308aaac1811c5628cb3
-size 160
+function h = descrip(obj, val)
+% name - returns / sets name value for object
+%
+% $Id$
+
+if nargin > 1
+  obj.descrip = val;
+  h = obj;
+else
+  h = obj.descrip;
+end

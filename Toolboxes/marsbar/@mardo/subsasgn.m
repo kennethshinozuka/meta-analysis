@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7286cd9e22c65ac038de4d9c70cddc4a45dbbe52f4ec1b8fda5548ad9af65357
-size 272
+function result = subsasgn(this, Struct, rhs)
+% method to overload . notation in assignments.
+% . assignment for mardo objects acts on the contents of des_struct
+%
+% $Id$
+
+SPM = des_struct(this);
+SPM = builtin('subsasgn', SPM, Struct, rhs);
+result = des_struct(this, SPM);

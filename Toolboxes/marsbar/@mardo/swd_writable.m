@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c333504396c5ff9fc707742ce86787e4097a536801e74b9e4b5457aee7529136
-size 270
+function tf = swd_writable(D)
+% returns true if swd directory can be written to 
+% 
+% $Id$
+  
+tf = 0;
+Swd = swd(D);
+if isempty(Swd), return, end
+
+test_file = fullfile(Swd, 'write_test.txt');
+try
+  save(test_file, 'test_file');
+  tf = 1;
+end
+if tf, delete(test_file); end

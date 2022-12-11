@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cdad379ae352b7fa75aa994444512e978404b9674cb806a3a3a8a731cb6ea563
-size 221
+function r = design_structure(o, xX)
+% method to get or set SPM design structure
+% 
+% $Id$
+
+SPM = des_struct(o);
+if nargin < 2
+  r = mars_struct('getifthere', SPM, 'xX');
+else
+  SPM.xX = xX; 
+  r = des_struct(o, SPM);
+end

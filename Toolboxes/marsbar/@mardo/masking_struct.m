@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:babe9c074305cd59797b44f7de96d2ca34e20483d31a3834acaa28ae2ff560ba
-size 220
+function r = masking_struct(o, xM)
+% method to get or set SPM masking structure
+% 
+% $Id$
+
+SPM = des_struct(o);
+if nargin < 2
+  r = mars_struct('getifthere', SPM, 'xM');
+else
+  SPM.xM = xM; 
+  r = des_struct(o, SPM);
+end

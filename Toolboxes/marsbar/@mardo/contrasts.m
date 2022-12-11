@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:562d8652339390487409882e4ce95699278e92a4c909411108c357de4a1d075b
-size 201
+function r = contrasts(o, xcon)
+% method to get or set contrasts
+% 
+% $Id$
+  
+if nargin < 2
+  r = get_contrasts(o);
+else
+  % Always refreshes the contrasts for safety
+  r = set_contrasts(o, xcon);
+end

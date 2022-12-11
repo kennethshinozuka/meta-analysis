@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8e9091d71fcf8cb86863a45178e084301a0a01b2dd1928aeba611aaf72a16ffa
-size 355
+function V = spm_create_image(V)
+% Wrapper for spm_create_vol, for compatibility with SPM99
+% FORMAT V = spm_create_image(V)
+%
+% Actually, MarsBaR itself does not use this function; it's included here
+% for compatibility with Phiwave (phiwave.sourceforge.net), that depends
+% on MarsBaR for its design interface and such.
+%
+% $Id$
+
+V = spm_create_vol(V);

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3d9ba53ad76ab71e7828018d67595adae8684b6c9f746c2ec42d0fb32dc90469
-size 281
+function res = summary_descrip(o, descrip)
+% get/set method for summary data description
+% 
+% $Id$ 
+  
+st = y_struct(o);
+if nargin < 2 % get
+  res = '';
+  if isfield(st, 'descrip')
+    res = st.descrip;
+  end
+else % set
+  st.descrip = descrip;
+  o = y_struct(o, st);
+  res = o;
+end

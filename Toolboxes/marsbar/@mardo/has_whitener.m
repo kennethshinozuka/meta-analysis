@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2b7434a6b9ec54de3bdbb785a0edf057a9065217631c2ef71c64eeff1b2afde7
-size 143
+function tf = has_whitener(D)
+% returns 1 if design has whitening filter
+%
+% $Id$
+  
+% Which is not the case for default, SPM99 designs
+tf = 0;

@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4ad636f3bb72ea807649626932b47b14e6c6502670935795030c9db396adfe37
-size 172
+function o = ne(o1, o2)
+% overloaded ne function 
+%
+% $Id$
+
+if isa(o1, 'maroi'),o1 = back2base(o1);end
+if isa(o2, 'maroi'),o2 = back2base(o2);end
+o = domaths('ne', o1, o2);

@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e08c6ece4ae9024917682152651627c2e065a959757485ca8af709ea4176fc2b
-size 384
+function [o, errf] = set_item_data_ui(o, item)
+% sets data for item using GUI
+% FORMAT [o, errf] = set_item_data_ui(o, item)
+%
+% o        - object
+% item     - name of item to set for
+% 
+% Returns
+% o        - object with data set (probably)
+% errf     - flag is 1 if data was not set
+%
+% $Id$
+
+if nargin < 2
+  error('Need item to set to');
+end
+
+[o errf] = do_set(o, item, 'set_ui');

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:968f53c48f1cb8d3729fbbfa208934a328586e9e5dc3539007efbc2af5ee7444
-size 626
+#-----------------------------------------
+#@# Cortical Parc 2 lh Thu Dec 30 17:40:05 EST 2010
+
+ mris_ca_label -l ../label/lh.cortex.label -aseg ../mri/aseg.mgz -seed 1234 fsaverage lh ../surf/lh.sphere.reg /usr/local/freesurfer/stable5/average/lh.destrieux.simple.2009-07-29.gcs ../label/lh.aparc.a2009s.annot 
+
+#-----------------------------------------
+#@# Cortical Parc 2 rh Thu Dec 30 17:40:58 EST 2010
+
+ mris_ca_label -l ../label/rh.cortex.label -aseg ../mri/aseg.mgz -seed 1234 fsaverage rh ../surf/rh.sphere.reg /usr/local/freesurfer/stable5/average/rh.destrieux.simple.2009-07-29.gcs ../label/rh.aparc.a2009s.annot 
+

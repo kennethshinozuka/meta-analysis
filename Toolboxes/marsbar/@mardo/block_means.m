@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:31c486b1cd99fb8fda84b27fd0c18c5f40f9b56286729978a009714fcfa14268
-size 379
+function bms = block_means(D)
+% method returns means for blocks in design
+% 
+% Inputs
+% D        - design object
+%
+% Outputs
+% bms      - means over block.  Returns B x N matrix
+%            where B is number of blocks, and N is number
+%            of ROIs 
+%
+% $Id$
+
+Y = data(D);
+if isempty(Y)
+  error('Design does not yet have data');
+end
+bms = summary_block_means(data(D));
+
+

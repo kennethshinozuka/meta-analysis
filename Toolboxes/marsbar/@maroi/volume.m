@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd46fe380471b3609c0f72eaef8622420ee215562f860fa5a4633c297b620032
-size 193
+function v = volume(obj)
+% volume method - returns volume of ROI in mm
+%
+% $Id$
+
+sp = native_space(obj);
+XYZ = voxpts(obj,sp);
+vox = sqrt(sum(sp.mat(1:3,1:3)'.^2));
+v = size(XYZ,2) * prod(vox);

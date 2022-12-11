@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:358d371afbed27df708f5738492a49aedf5c370f200972731bcab6057fd2a4ce
-size 174
+function r = betas(o)
+% method to get estimated betas
+% 
+% $Id$
+
+if ~is_mars_estimated(o)
+  error('No betas, model not estimated');
+end
+SPM = des_struct(o);
+r   = SPM.betas;

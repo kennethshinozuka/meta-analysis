@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fba3f0b9a4646711fd86d1624e9231e0bd15fcc706d45170f43581fa86ee5989
-size 565
+function D = ui_build(D, dtype)
+% method to create / fill design via GUI
+% FORMAT D = ui_build(D, dtype)
+%
+% D      - design object
+% dtype  - one of 'PET', 'FMRI', 'Basic')
+% 
+% Returns
+% D      - design object with new design
+%
+% $Id$
+
+if nargin < 2
+  error('Need design type');
+end
+
+switch lower(dtype)
+ case 'pet'
+  SPM = pr_spm_ui('cfg',spm_spm_ui('DesDefs_PET'));
+ case 'basic'
+  SPM = pr_spm_ui('cfg',spm_spm_ui('DesDefs_Stats'));
+ case 'fmri'
+  SPM = pr_fmri_design;
+ otherwise
+  error(['Did not recognize design type: ' dtype]);
+end
+D = des_struct(D, SPM);

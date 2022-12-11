@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9a49da3f48dd6097269c123f61eff1d060016e415ac2cfb56c524c2e77284ab0
-size 217
+function o = flip_images(o)
+% flips images in design
+%
+% $Id$
+  
+if ~has_images(o), return, end
+VY = get_images(o);
+M = diag([-1 1 1 1]);
+for i = 1:length(VY)
+  VY(i).mat = M * VY(i).mat;
+end
+o = set_images(o, VY);
+  

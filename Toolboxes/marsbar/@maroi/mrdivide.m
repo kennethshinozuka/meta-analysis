@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:59faa72b8e4da012ee9bde9c92494b1c116ad1ae2437d8382a2abb5cfb177d46
-size 210
+function o = mrdivide(o1, o2)
+% overloaded mrdivide (matrix right divide) function 
+%
+% $Id$
+
+if isa(o1, 'maroi'),o1 = back2base(o1);end
+if isa(o2, 'maroi'),o2 = back2base(o2);end
+o = domaths('divide', o1, o2);

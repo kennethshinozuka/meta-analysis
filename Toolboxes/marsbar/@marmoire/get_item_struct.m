@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15f6110f2bf216c1e0ccc0fe0eb6c645ca625eb41fa214f71b35fa0f1bb7f95a
-size 448
+function I = get_item_struct(o, item)
+% get whole item structure, including parameters
+% FORMAT I = get_item_struct(o, item)
+% 
+% This is used internally, and might be useful for debugging
+% 
+% o       - object
+% item    - item name
+%
+% Returns
+% I       - item structure, with data in field 'data' and/or specified in
+%           field 'filename'
+%
+% $Id$
+
+if ~item_exists(o, item)
+  error('Item does not exist');
+end
+I = getfield(o.items, item);

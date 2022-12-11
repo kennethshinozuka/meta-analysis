@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c3e55ac7cefee238519f7801569d188e451213783059763d0b9384e91a5dbfa8
-size 403
+function o = set_item_struct(o, item, item_struct)
+% set whole item structure, including parameters
+% FORMAT I = get_item_struct(o, item, item_struct)
+% 
+% o           - object
+% item        - item name
+% item_struct - item structure
+% 
+% Returns
+% o           - object with item structure set
+%
+% $Id$
+
+% We might consider error checking here.  But hey.
+o.items = setfield(o.items, item, item_struct);

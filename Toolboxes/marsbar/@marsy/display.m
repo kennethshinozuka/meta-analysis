@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d0ea5254f6638cee0a1506c014d82a79d49ecd2ff7f137c63b04afb9ddaa1101
-size 704
+function display(obj)
+% display method for marsy objects
+%
+% $Id$
+
+src = '[MarsBaR data object]';
+if length(obj) > 1 % array of objects
+  sz = size(obj);
+  src = sprintf('%d by %d array of %s', sz(1), sz(2), src);
+  if isequal(get(0,'FormatSpacing'),'compact')
+    disp([inputname(1) ' =']);
+    disp(src);
+  else
+    disp(' ')
+    disp([inputname(1) ' =']);
+    disp(' ');
+    disp(src);
+    disp(' ');
+  end    
+else % single object
+  X = char(summary(obj));
+  if isequal(get(0,'FormatSpacing'),'compact')
+    disp([inputname(1) ' =']);
+    disp(src);
+    disp(X)
+  else
+    disp(' ')
+    disp([inputname(1) ' =']);
+    disp(' ');
+    disp(src);
+    disp(' ');
+    disp(X)
+    disp(' ');
+  end    
+end

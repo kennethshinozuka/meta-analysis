@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e26fca84c8a5495a152a87d06b6fd333f74052ce323c223b45dc45b30e2798dd
-size 172
+function o = eq(o1, o2)
+% overloaded eq function 
+%
+% $Id$
+
+if isa(o1, 'maroi'),o1 = back2base(o1);end
+if isa(o2, 'maroi'),o2 = back2base(o2);end
+o = domaths('eq', o1, o2);

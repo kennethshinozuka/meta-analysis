@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1a133593ad9cd2b386f046e85b328d63de9b84cc3765efb79779433850aae746
-size 169
+function mod_str = modality(D)
+% method returns modality of design
+%
+% $Id$ 
+  
+SPM = des_struct(D);
+try
+  SPM.Sess{1};
+  mod_str = 'fmri';
+catch
+  mod_str = 'pet';
+end

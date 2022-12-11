@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48e3cd31f76936dbcccaff57da37303599e44ade3bdb33b3b9c79c9b5cfda912
-size 295
+function xCon = get_contrasts(D)
+% method to get contrasts from design object
+% FORMAT xCon = get_contrasts(D)
+% 
+% Returns contrast structure from design
+% See ui_get_contrasts for UI to get individual contrasts
+%  
+% $Id$
+  
+SPM = des_struct(D);
+xCon = mars_struct('getifthere', SPM, 'xCon');

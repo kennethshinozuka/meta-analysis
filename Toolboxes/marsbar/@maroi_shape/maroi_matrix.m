@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c50f9b31244a65a8c452c50be0446b09825d1a09579ed2212db17932d4634828
-size 522
+function o2 = maroi_matrix(o, space)
+% method to convert shape objects to maroi_matrix objects
+%
+% $Id$
+
+if nargin < 2
+  space = [];
+end
+if isempty(space)
+   space = native_space(o);
+end	
+if isempty(space)
+   error('Need space to create maroi_matrix');
+end
+
+params = paramfields(o);
+params.mat = space.mat;
+dim = space.dim(1:3);
+params.dat = zeros(dim);
+
+[pts vals] = voxpts(o, space);
+dinds = pts(1,:) + ...
+	(pts(2,:)-1) * dim(1) + ...
+	(pts(3,:)-1) * dim(1)*dim(2);
+
+params.dat(dinds) = vals;
+o2 = maroi_matrix(params);

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9d28bd0af341cc903f617d84e413b3c95931f8f366cf17d6b8050baa3c1d75aa
-size 282
+function tf = is_summary_only(o)
+% method returns 1 if object only contains summary data
+% 
+% $Id$
+
+tf = 0;
+st = y_struct(o);
+if isfield(st, 'Y')
+  if ~isfield(st, 'regions')
+    tf = 1;
+  else
+    Y = region_data(o);
+    Y = [Y{:}];
+    tf = size(Y, 2) == size(st.Y, 2);
+  end
+end

@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7ddccf44a5d38976d2b3248e90f22a910af55298f7362c8ab87d8c5944c356b4
-size 656
+function [xc, ic] = get_contrast_by_name(D, cname)
+% get named contrast(s) from design contrast structure
+% FORMAT [xc, ic] = get_contrast_by_name(D, cname)
+% 
+% D      - design object
+% cname  - contrast name(s) (string or cell array)
+% 
+% Returns
+% xc     - xCon structure containing only named contrast
+% ic     - index of contrast in design contrast structure
+%
+% e.g. [con ic] = get_named_contrasts(D, 'effects of interest');
+%
+% $Id$
+
+if nargin < 2
+  error('Need contrast name(s)');
+end
+if ischar(cname)
+  cname = cellstr(cname);
+end
+
+xc = get_contrasts(D); 
+if isempty(xc)
+  ic = [];
+else
+  ic = find(ismember({xc(:).name}, cname));
+end
+xc = xc(ic);

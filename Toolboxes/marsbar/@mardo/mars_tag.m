@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:560e1dfdc267ef3f5e9081fa8c76d5efcf103dbbc8950349d71017d83b50df79
-size 264
+function res = mars_tag(o, data)
+% returns, or sets, Mars tagging structure in design
+% 
+% $Id$
+  
+if nargin > 1 % set
+  res = o;
+  res.des_struct.xMars = data;
+  return
+end
+
+if isfield(o.des_struct, 'xMars') % get
+  res = o.des_struct.xMars;
+else
+  res = [];
+end

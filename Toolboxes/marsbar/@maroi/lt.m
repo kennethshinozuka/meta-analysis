@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:33a7c836e6a113c59395aa9b392b0fc098a80094d1c08dd136d70a37521dd0e6
-size 184
+function o = lt(o1, o2)
+% overloaded lt (less than) function 
+%
+% $Id$
+
+if isa(o1, 'maroi'),o1 = back2base(o1);end
+if isa(o2, 'maroi'),o2 = back2base(o2);end
+o = domaths('lt', o1, o2);

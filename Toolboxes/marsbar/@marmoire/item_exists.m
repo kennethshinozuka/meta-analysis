@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7d91802b6107833ce4338ad9cde9ef186c34576c1ee72f22330ce69500899fa4
-size 169
+function tf = item_exists(o, item)
+% returns true if there is an item of this name
+%
+% $Id$
+
+tf = 0;
+if ~isempty(o.items)
+  tf = ismember(item, fieldnames(o.items));
+end

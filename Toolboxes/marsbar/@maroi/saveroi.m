@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b034439abb8a68a8990e9762f6689fd1d7242c072c2e51db469714090cd5ab6f
-size 252
+function roi = saveroi(roi, fname)
+% saveroi method - checks fname, sets source field, saves object
+%
+% $Id$
+
+if nargin < 2
+  fname = source(roi);
+end
+if isempty(fname)
+  error('Need filename for save');
+end
+roi.source = fname;
+save(roi.source, 'roi');

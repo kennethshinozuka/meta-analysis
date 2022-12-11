@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e9846cb1af6fdf382ec9aa386b498298d1296102d88fc63a68b6864052ec6197
-size 181
+function o = times(o1, o2)
+% overloaded times function 
+%
+% $Id$
+
+if isa(o1, 'maroi'),o1 = back2base(o1);end
+if isa(o2, 'maroi'),o2 = back2base(o2);end
+o = domaths('times', o1, o2);

@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f8708ae3f5c81815c7855191654bbb2be02845dc26405532f00777cb35e85f10
-size 283
+function tf = isempty_item_data(o, item)
+% returns 1 if no data for this item
+% FORMAT tf = sjjs(o, item)
+% 
+% o     - object
+% item  - item name
+% 
+% tf    - flag, 1 if not empty
+% 
+% $Id$
+
+if nargin < 2
+  error('Need item')
+end
+I  = get_item_struct(o, item);
+tf = pr_isempty(I);
+  

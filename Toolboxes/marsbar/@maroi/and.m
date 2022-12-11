@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0fd3664f983e343838a7341b18576f072d41f5fca6f781edf4b4301e477be9f4
-size 175
+function o = and(o1, o2)
+% overloaded add function 
+%
+% $Id$
+
+if isa(o1, 'maroi'),o1 = back2base(o1);end
+if isa(o2, 'maroi'),o2 = back2base(o2);end
+o = domaths('and', o1, o2);

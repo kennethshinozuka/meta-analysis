@@ -1,3 +1,8 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c85df8d413d7a6e6eaff3ab1008521dc9531c869523ca9b433fb773023ead8dc
-size 147
+function o = flip_lr(o)
+% flips ROI left / right
+%
+% $Id  
+
+% Requires change to ROI data -> return as maroi_matrix
+
+o = flip_lr(maroi_matrix(o));

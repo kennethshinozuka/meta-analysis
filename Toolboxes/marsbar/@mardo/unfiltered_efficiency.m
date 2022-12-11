@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e57b053f42902acca18666b20a821e19a7b20bd0070cbe6e0c05a1f64399f964
-size 387
+function e = unfiltered_efficiency(D, Ic)
+% Calculate unfiltered efficiency for given SPM design and contrast
+
+if nargin < 2
+  error('Need design and contrast number');
+end
+if ~has_contrasts(D)
+  error('Need design with contrasts');
+end
+
+% Get contrast matrix to test for
+xCon = get_contrasts(D);
+con = xCon(Ic).c;
+
+X = design_matrix(D);
+e = 1 / trace(con' * pinv(X' * X) * con);
+return

@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dc5d0f3a03fe4ccd4320afd04d2e951e4e731d3deaa724194f591ad7c780a2db
-size 151
+function res = native_vol_ver(obj)
+% return string specifying native vol type
+%
+% $Id: verbose.m 87 2004-01-06 01:48:35Z matthewbrett $  
+  
+res = '5';

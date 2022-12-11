@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fbe85caef1ba1bfc4c6b311878bbb8b2fda8154d17e7093bc636f518c6910418
-size 228
+function savestruct(obj, filename)
+% saves data in y_struct as variables in .mat file
+% FORMAT savestruct(object, matname)  
+%
+% $Id$
+  
+if nargin ~= 2
+  error('Need matfile name');
+end
+savestruct(y_struct(obj), filename)
+return

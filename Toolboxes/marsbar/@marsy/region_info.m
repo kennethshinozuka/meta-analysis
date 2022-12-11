@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:290bdb94f743f1b0cc397875edbfc73b431941ef7dc0b30f9ae253f97cf84d51
-size 284
+function res = region_info(varargin)
+% method gets or sets info for region(s) as cell array
+% FORMAT res = region_info(o, r_nos) (get) OR 
+% FORMAT res = region_info(o, r_nos, new_data) (set)
+% 
+% See region_field for details
+%  
+% $Id$
+
+res = region_field('info', varargin{:});
+  
+  

@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b4e6eb3aecc07f9009695394568c28f12292137b3e21cfc9ff1ea568cbb863cc
-size 162
+function tf = has_filter(o)
+% returns 1 if object contains filter
+%
+% $Id$
+  
+tf = 0;
+des = des_struct(o);
+if isfield(des, 'xX')
+  tf = isfield(des.xX, 'K');
+end

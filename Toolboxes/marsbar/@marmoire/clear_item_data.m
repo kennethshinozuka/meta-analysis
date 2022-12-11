@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c9f7ee7b075823996d58dfae05a688bde33ec0ec3df543c3a2e2c1585102abe7
-size 426
+function [o, errf] = clear_item_data(o, item)
+% sets data for item to empty
+% FORMAT [o errf] = clear_item_data(o, item);
+%
+% o        - object
+% item     - name of item to clear data for
+% 
+% Returns
+% o        - object with data cleared for this item
+% errf     - flag is 1 if data was not cleared for some reason
+%
+% $Id$
+
+if nargin < 2
+  error('Need item to clear data');
+end
+
+[o errf] = do_set(o, item, 'clear', [], '');

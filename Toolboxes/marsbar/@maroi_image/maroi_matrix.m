@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a9d257f2023d739d3556f450453c64f29406220126ae2c68a0cf442be0b4829
-size 168
+function o = maroi_matrix(o, sp)
+% maroi_matrix method - converts maroi_image to maroi_matrix
+%
+% $Id$
+
+o = o.maroi_matrix;
+if nargin > 1
+  o = maroi_matrix(o, sp);
+end

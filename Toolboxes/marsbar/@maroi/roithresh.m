@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:356fe62062527766da519e69faeaed611d7557db1d855da6de58b1841ad0312b
-size 249
+function h = roithresh(obj, val)
+% roithresh - returns / sets roithresh value for object
+%
+% $Id$
+
+if nargin > 1
+  if val < 0 | val > 1
+    error('Value must be between 0 and 1');
+  end
+  obj.roithresh = val;
+  h = obj;
+else
+  h = obj.roithresh;
+end

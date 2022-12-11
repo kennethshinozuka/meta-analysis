@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5975bd3c9b642086b125a9c798b9e95501738e0be95d65c502b542606fabbc4
-size 221
+function f = fwhm(o)
+% method returns FWHM, or empty if not available
+% 
+% $Id: tr.m,v 1.1 2004/01/26 22:08:55 matthewbrett Exp $
+  
+f = [];
+SPM = des_struct(o);
+if mars_struct('isthere', SPM, 'FWHM')
+  f = SPM.FWHM;
+end

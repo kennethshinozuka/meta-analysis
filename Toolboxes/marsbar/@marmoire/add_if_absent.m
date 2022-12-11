@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1d6737cb7e708930de7152b8623c60839ecc022a34ba6b0db4abb2e393a1b2a
-size 266
+function o = add_if_absent(o, item, data)
+% Adds item only if not already present
+% 
+% $Id$
+  
+if nargin < 2
+  error('Need name of item to add');
+end
+if nargin < 3
+  error('Need data to put into item');
+end
+if ~item_exists(o, item)
+  o = add_item(o, item, data);
+end

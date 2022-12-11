@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b86df78bf8bdfe5ce1fe6c6d615abcf149fd726722dff443666b3f3949fc038d
-size 134
+function sp = native_space(obj)
+% native_space method - returns native space of object
+%
+% $Id$
+
+sp = maroi('classdata', 'spacebase');

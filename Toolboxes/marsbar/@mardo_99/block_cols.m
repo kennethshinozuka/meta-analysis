@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:79a8c633c069916171fc8c8423f01e78ef759244eac4be8dcefc8d6ec7843d68
-size 334
+function cols = block_cols(D)
+% method gets design columns for block (session / subject)
+% FORMAT cols = block_cols(D)
+% 
+% Returns cell array of column indices (one per session)
+%
+% $Id$
+  
+if ~is_fmri(D)
+  error('Needs FMRI design');
+end
+
+SPM   = des_struct(D);
+Sess  = SPM.Sess;
+for i = 1:length(Sess)
+  cols{i} = Sess{i}.col;
+end

@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:424ba9ddc4e5596fc29bd8446c9d2a52982076c3840fd908e48761ef0ed65521
-size 299
+function res = region_descrip(varargin)
+% method gets or sets descrip for region(s) as cell array
+% FORMAT res = region_descrip(o, r_nos) (get) OR 
+% FORMAT res = region_descrip(o, r_nos, new_data) (set)
+% 
+% See region_field for details
+%  
+% $Id$
+
+res = region_field('descrip', varargin{:});
+  
+  

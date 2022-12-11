@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:83f7d84673ade37847d7bcf2d9336fa934212c3bf0d03b2ff15d58cbb015db6b
-size 433
+function tf = eq(Y1, Y2)
+% method overrides == operator
+% 
+% $Id$
+  
+tf = 0;
+if ~isa(Y1, 'marsy') | ~isa(Y2, 'marsy'), return, end
+if ~all(summary_size(Y1) == summary_size(Y2)), return, end
+if is_summarized(Y1) ~= is_summarized(Y2), return, end
+if is_summarized(Y1)
+  y1 = summary_data(Y1);
+  y2 = summary_data(Y2);
+else
+  y1 = region_data(Y1);
+  y1 = [y1{:}];
+  y2 = region_data(Y2);
+  y2 = [y2{:}];
+end
+tf = all(all(y1 == y2));
+
+  

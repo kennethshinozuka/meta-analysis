@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e686b79cf518cdb1a1523fbc26fa1fdbec342d487d46d42aff203fb47233ca9e
-size 103
+function o = flip_lr(o)
+% flips ROI left / right
+%
+% $Id$  
+
+M = eye(4); M(1) = -1;
+o.mat = M * o.mat;

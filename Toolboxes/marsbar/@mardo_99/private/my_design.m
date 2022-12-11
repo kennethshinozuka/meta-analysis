@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5745d7d2b4ca9aa16c5ed4166ceb886ed4ddf8f87788c7ae727e3d21e28bb3db
-size 333
+function tf = my_design(des)
+% returns 1 if design looks like it is of SPM99 type
+% 
+% $Id$
+  
+tf = 0;
+if isfield(des, 'SPMid')
+  % Can be SPM99 design with SPM99 tag or MarsBaR tag
+  % (MarsBaR tag used only by MarsBaR <= 0.23)
+  tf = ~isempty(strmatch('SPM99', des.SPMid)) | ...
+       ~isempty(strmatch('MarsBar', des.SPMid));
+end

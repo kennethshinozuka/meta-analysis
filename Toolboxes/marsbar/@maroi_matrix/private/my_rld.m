@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1cf8b56e204e34218cb7f40fc573d30397a88f5a52b5b0da16234631bb1af20d
-size 254
+function mat = my_rld(rlem, dim)
+% function to do run length decoding 
+%
+% $Id$
+
+sz = sum(rlem(:,1));
+mat = zeros(sz, 1);
+st = 1;
+for i = 1:size(rlem, 1)
+  tm = zeros(rlem(i,1),1) + rlem(i,2);
+  st2 = st + rlem(i,1);
+  mat(st:st2-1) = tm;
+  st = st2;
+end

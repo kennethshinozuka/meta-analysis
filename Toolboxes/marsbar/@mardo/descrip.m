@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e2b4d1859ad4ac080d958673e6204bfc7e6647c74a65259b09d3bfc00c0ca41b
-size 219
+function strs = descrip(D)
+% method gets cell string description of design
+%
+% $Id$ 
+  
+SPM = des_struct(D);
+strs = {'Not specified'};
+if ~isfield(SPM, 'xsDes');
+  return
+end
+strs = mars_struct('celldisp', SPM.xsDes);  

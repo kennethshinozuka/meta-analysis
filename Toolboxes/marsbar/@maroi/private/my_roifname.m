@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03d36a10df4e191978358748dd0bf8762cb41f9a3a2ec8bead728f11679e0107
-size 430
+function roifname = my_roifname(fname)
+% changes fname to appropriate ROI format
+%
+% $Id$
+
+if nargin < 1
+  fname = [];
+end
+roifname = fname;
+if isempty(fname)
+  return
+end
+gend = maroi('classdata', 'fileend');
+lg = length(gend);
+
+[p f e] = fileparts(roifname);
+f2 = [f e];
+if length(f2)<lg | ~strcmp(gend, [f2(end - lg +1 : end)])
+  roifname = fullfile(p, [f gend]);
+end
+% make absolute path
+roifname = spm_get('cpath', roifname);

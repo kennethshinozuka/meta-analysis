@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1e628d63b7dc5c5d61dc2b7f4fd44bb58517eaa1d6d83b7d46e2ce2c6924441f
-size 356
+function I = event_cols(D, e_spec)
+% method gets design columns for single event 
+% 
+% $Id$
+  
+if nargin < 2
+  error('Need design and event spec');
+end
+if ~is_fmri(D)
+  error('Needs FMRI design');
+end
+
+SPM   = des_struct(D);
+Sess  = SPM.Sess;
+bf    = SPM.xBF.bf;
+ss    = e_spec(1);
+en    = e_spec(2);
+I     = Sess(ss).col(Sess(ss).Fc(en).i(1:size(bf,2)));

@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:109ec916435f0783d6489c7a7171d2194fea75470b07914aa59ce6502f34f369
-size 565
+function V = design_vol(D, imgs)
+% returns vols in appropriate format for saving in design
+% FORMAT V = design_vol(D, imgs)
+%
+% Input 
+% D           - mardo design object
+% imgs        - image names or vol structs
+% 
+% Output
+% V           - paths relative to swd
+%
+% $Id$
+
+if nargin < 2
+  error('Need image information');
+end
+
+if isstruct(imgs) % vol struct, check for absolute path name
+  imgs = strvcat(imgs(:).fname);
+end
+if iscell(imgs)
+  imgs = char(imgs);
+end
+if ischar(imgs)
+  V = spm_str_manip(imgs, 't');
+else
+  error('Odd input format for images');
+end
+

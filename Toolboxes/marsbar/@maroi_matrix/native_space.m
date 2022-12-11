@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9cad5a773f78d17bb077a2f0966260aa753e2b2de09ac90be7fc6760fe0b13d6
-size 137
+function sp = native_space(obj)
+% native_space method - returns native space of object
+%
+% $Id$
+
+sp = mars_space(size(obj.dat), obj.mat);

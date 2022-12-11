@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4f3336d7c64017a14b5b963a0122eeeb4185b17d12e4e3c20341b4499dbbe61c
-size 567
+function r = block_rows(Y, rows)
+% gets/sets cell array of rows for each (subject/session) block
+%
+% $Id$
+
+ys = y_struct(Y);
+n  = n_time_points(Y);
+if nargin < 2  % get
+  if ~isfield(ys, 'block_rows')
+    r = {[1:n]'};
+  else
+    r = ys.block_rows;
+  end
+else           % set
+  if ~iscell(rows)
+    error('Need cell array of matrices for blocks');
+  end
+  for i = 1:prod(size(rows))
+    rows{i} = rows{i}(:);
+    if any(rows{i} < 1 | rows{i} > n)
+      error(sprintf('Row %d: values out of range', i));
+    end
+  end
+  ys.block_rows = rows;
+  r = y_struct(Y, ys);
+end

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd8cc5b21daa6719ea9061da025a549f8ead775e1dd6bbdaa12229e8296fa170
-size 212
+function h = vol(obj, val)
+% vol - returns / sets image vol for object
+%
+% $Id$
+
+if nargin > 1
+  img = my_vol_func(val, obj.func);
+  obj.vol = val;
+  obj = matrixdata(obj, img);
+  h = obj;
+else
+  h = obj.vol;
+end

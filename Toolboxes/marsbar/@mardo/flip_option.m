@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:de6d4b83d3c9e9440d7e1e204f8250008b99e3ed0f15a86b9dd6d575858ff090
-size 183
+function res = flip_option(obj, data)
+% get/set flag for flipping images in design
+%
+% $Id$
+  
+if nargin > 1
+  obj.flip_option = data;
+  res = obj;
+else
+  res = obj.flip_option;  
+end

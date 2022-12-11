@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:86c004227d47f67b021fd8ec3e2cd25ce429c8c89a3a280a707ada1a6c134003
-size 259
+function res = summary_info(o, descrip)
+% get/set method for summary data info
+% 
+% $Id$ 
+  
+st = y_struct(o);
+if nargin < 2 % get
+  res = [];
+  if isfield(st, 'info')
+    res = st.info;
+  end
+else % set
+  st.info = info;
+  o = y_struct(o, st);
+  res = o;
+end
