@@ -2,7 +2,7 @@ In this repository, we share the code for the functional connectivity (FC) segme
 
 In order to run any of the code in the `Scripts` and `Tests` folders, there are **two prerequisites**:
 1. You MUST update the `root_path` at the top of each file, which contains the path to the directory where you have saved this repository.
-2. To run `compute_surrogate_study.m` and `null_dist.m`, you MUST download the HCP timeseries from 100 unrelated subjects, run `ts = subject(1:100)` then `save(ts, fullfile(root_path, 'Null', 'DK80_BOLD_HCP_100subs.mat'). You can get the timeseries via this link: http://www.kringelbach.org/ndte/dk80/hcp1003_REST1_LR_dbs80.mat
+2. To run `compute_surrogate_study.m` and `null_dist.m`, you MUST download the HCP timeseries from 100 unrelated subjects, run `ts = subject(1:100)` then `save(ts, fullfile(root_path, 'Null', 'DK80_BOLD_HCP_100subs.mat')`. You can get the timeseries via this link: http://www.kringelbach.org/ndte/dk80/hcp1003_REST1_LR_dbs80.mat
 
 The `Scripts` folder contains six files/directories:
 1. `calculate_overlap.m`, a function that calculates the overlaps between Yeo networks and regions of interest. 
