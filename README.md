@@ -21,4 +21,4 @@ To run all of the tests at once, simply `cd root_path` then execute `runtests`.
 There are three other folders: 
 1. `Atlases`, which contains the Desikan-Killiany-62 (DK-62) and Desikan-Killiany-80 (DK-80) parcellations for the null distribution, as well as the Yeo networks and Yeo + Tian networks (subcortical)
 2. `Null`, which contains the output of running `null_dist.m` with both the DK-62 and DK-80 parcellations
-3. `Toolboxes`, which contains the MarsBaR toolbox for producing spheres around regions of interest. This is used by `calculate_overlap.m` and the corresponding test code.
+3. `Toolboxes`, which contains the MarsBaR toolbox for producing spheres around regions of interest. This is used by `FC_meta_analysis.m` and `test_calculate_overlap.m`.
