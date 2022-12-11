@@ -16,7 +16,7 @@ The `Tests` folder contains three files:
 1. `test_calculate_overlap.m`, which tests `calculate_overlap.m`.
 2. `test_scoring.m`, which tests `scoring.m`.
 3. `test_significance_testing.m`, which tests both `compute_surrogate_study.m` and `null_dist.m`.
-To run all of the tests at once, simply `cd root_path` then execute `runtests('tests/').
+To run all of the tests at once, simply `cd root_path` then execute `runtests`.
 
 There are three other folders: 
 1. `Atlases`, which contains the Desikan-Killiany-62 (DK-62) and Desikan-Killiany-80 (DK-80) parcellations for the null distribution, as well as the Yeo networks and Yeo + Tian networks (subcortical)
