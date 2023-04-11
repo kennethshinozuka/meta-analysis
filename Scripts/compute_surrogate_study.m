@@ -9,7 +9,7 @@
 % Inputs:
 % - T_HCP: Number of timepoints/TRs in the HCP dataset.
 % - TR: Average number of TRs in the psychedelic dataset.
-% - ts: HCP timeseries (100x100x1189 tensor).
+% - ts: HCP timeseries (62x62x1189 tensor for cortical, 80x80x1189 tensor for cortical+subcortical).
 % - num_rois: Number of ROIs in the DK parcellation of the HCP dataset.
 %   num_rois must be either 62 or 80; if num_rois is 62, then we measure FC
 %   in only the cortical ROIs, but if it's 80 then we measure FC across all
